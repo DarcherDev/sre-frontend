@@ -18,15 +18,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatTreeModule} from '@angular/material/tree';
-
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
   exports: [
     FormsModule,
     ReactiveFormsModule,
-
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
@@ -43,7 +41,8 @@ import {MatTreeModule} from '@angular/material/tree';
     MatNativeDateModule,
     MatGridListModule,
     MatDividerModule,
-    MatTreeModule
+    MatTreeModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class MaterialModule { }

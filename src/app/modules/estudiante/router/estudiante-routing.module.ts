@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EstudianteListComponent } from '../pages/estudiante-list/estudiante-list.component';
-import { EstudianteFormComponent } from '../pages/estudiante-form/estudiante-form.component';
+import { EstudianteFormModalComponent  } from '../pages/estudiante-form-modal/estudiante-form-modal.component';
 
 const routes: Routes = [
   {
@@ -9,8 +9,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: 'list', component: EstudianteListComponent },
-      { path: 'add', component: EstudianteFormComponent },
-      { path: 'edit/:id', component: EstudianteFormComponent },
+      { path: 'add', component: EstudianteFormModalComponent  },
+      { path: 'edit/:id', component: EstudianteFormModalComponent  },
     ],
   },
 ];

@@ -1,0 +1,14 @@
+.details {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-dialog-actions {
+  justify-content: flex-end;
+  padding: 16px 24px;
+}
