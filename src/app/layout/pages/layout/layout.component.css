@@ -1,21 +1,70 @@
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-
-
-.spacer {
-  flex: 1 1 auto;
-  margin-right: 8px;
-}
-
+/* Contenedor principal */
 .example-container {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+/* Drawer permanente */
+.permanent-drawer {
+  width: 250px;
+  border-right: none;
+  background: #f5f5f5;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+/* Cabecera del drawer */
+.drawer-header {
+  background: #3f51b5;
+  color: white;
+}
+
+/* Contenido principal */
+.content-container {
+  padding: 20px;
+  height: calc(100vh - 64px); /* Resta la altura del toolbar */
+  overflow-y: auto;
+}
+
+/* Toolbar principal */
+.main-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Estilos para los iconos */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Estilo para el item activo */
+.active {
+  background-color: rgba(63, 81, 181, 0.15) !important;
+  color: #3f51b5 !important;
+  font-weight: 500;
+}
+
+/* Ajustes para el mat-list-item */
+mat-list-item {
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 4px 8px;
+  border-radius: 4px;
+}
+
+mat-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
 }

@@ -1,29 +1,35 @@
-<mat-sidenav-container fullscreen>
-  <mat-sidenav #sidenav mode="push" [ngStyle]="{width: '250px'}">
-    <mat-toolbar color="primary">
-      <span class="material-symbols-outlined">category</span>
+<mat-drawer-container class="example-container" autosize>
+  <!-- Drawer (sidebar) - Siempre visible -->
+  <mat-drawer mode="side" opened class="permanent-drawer">
+    <mat-toolbar color="primary" class="drawer-header">
+      <span>MENU</span>
       <span class="spacer"></span>
-      <span>SRE</span>
+      <span class="material-symbols-outlined">patient_list</span>
     </mat-toolbar>
 
     <mat-nav-list>
-      <mat-list-item *ngFor="let item of sidebarItems" [routerLink]="item.url" (click)="sidenav.toggle()">
+      <mat-list-item 
+        *ngFor="let item of sidebarItems" 
+        [routerLink]="item.url"
+        routerLinkActive="active">
         <span class="material-symbols-outlined">{{item.icon}}</span>
         <span class="spacer"></span>
         {{item.label}}
       </mat-list-item>
     </mat-nav-list>
-  </mat-sidenav>
+  </mat-drawer>
 
-  <mat-toolbar color="primary">
-    <button mat-icon-button (click)="sidenav.toggle()">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-    <span>Sistema de Registro Escolar</span>
-  </mat-toolbar>
+  <!-- Main content -->
+  <mat-drawer-content>
+    <mat-toolbar color="primary" class="main-toolbar">
+      <!-- Eliminamos el botón de toggle -->
+      <span>Sistema de Registro Escolar</span>
+      <span class="spacer"></span>
+      <!-- Aquí puedes agregar otros elementos del toolbar si lo necesitas -->
+    </mat-toolbar>
 
-  <div class="container" p-2>
-    <router-outlet></router-outlet>
-  </div>
-
-</mat-sidenav-container>
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

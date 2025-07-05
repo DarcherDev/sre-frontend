@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class LayoutComponent {
   public sidebarItems = [
-    { label: 'estudiantes', icon: 'patient_list', url: '/estudiantes' },
-    { label: 'profesores',  icon: 'patient_list', url: '/profesores' },
+    { label: 'estudiantes', icon: 'people', url: '/estudiantes' },
+    { label: 'profesores',  icon: 'school', url: '/profesores' },
   ];
 }
