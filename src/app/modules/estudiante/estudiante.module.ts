@@ -5,6 +5,7 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { EstudianteFormComponent } from './pages/estudiante-form/estudiante-form.component';
 import { EstudianteListComponent } from './pages/estudiante-list/estudiante-list.component';
 import { EstudianteRoutingModule } from './router/estudiante-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
