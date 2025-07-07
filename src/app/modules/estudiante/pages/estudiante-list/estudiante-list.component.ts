@@ -14,7 +14,7 @@ import { EstudianteFormModalComponent } from '../estudiante-form-modal/estudiant
 })
 export class EstudianteListComponent {
   estudiantes: Estudiante[] = [];
-    isEditMode: boolean = false;
+  isEditMode!: boolean;
   
   displayedColumns: string[] = [
     'nombre', 
@@ -46,15 +46,19 @@ export class EstudianteListComponent {
     width: '600px',
     data: {
       estudiante: estudiante,
-      isEdit: !!estudiante
+      isEdit: estudiante 
     }
   });
 
   dialogRef.afterClosed().subscribe(result => {
     if (result) {
-      const operation = this.isEditMode ? 
-        this.estudianteService.updateEstudiante(result) :
-        this.estudianteService.addEstudiante(result);
+      let operation;
+      if (this.isEditMode) {
+        console.log('Editando estudiante:', result);
+        operation = this.estudianteService.updateEstudiante(result);
+      } else {
+        operation = this.estudianteService.addEstudiante(result);
+      }
 
       operation.subscribe({
         next: () => {
@@ -67,12 +71,14 @@ export class EstudianteListComponent {
   });
 }
 
-// Modificar los botones para usar el modal
+
 addEstudiante(): void {
+  this.isEditMode = false; // Aseguramos que estamos en modo edición
   this.openEstudianteForm();
 }
 
 editEstudiante(estudiante: Estudiante): void {
+  this.isEditMode = true; // Aseguramos que estamos en modo creación
   this.openEstudianteForm(estudiante);
 }
 

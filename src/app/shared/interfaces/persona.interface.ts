@@ -2,7 +2,7 @@ export interface Persona {
   id: number;
   firstName: string;
   lastNames: string;
-  birthDate: string; // O podrías usar Date si lo conviertes
+  birthDate: string; 
   email: string;
   phone: string;
 }

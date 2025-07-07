@@ -30,7 +30,7 @@ export class EstudianteService {
 
   updateEstudiante(estudiante: Estudiante): Observable<Estudiante> {
     if (!estudiante.id) throw Error('Estudiante id is required')
-    return this.http.put<Estudiante>(`${this.baseUrl}/update/${estudiante.id}`, estudiante);
+    return this.http.put<Estudiante>(`${this.baseUrl}/update`, estudiante);
   }
 
   deleteEstudiante(id: number): Observable<boolean> {

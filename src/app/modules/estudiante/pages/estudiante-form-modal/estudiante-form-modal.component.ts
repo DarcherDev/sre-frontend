@@ -32,6 +32,7 @@ initializeForm(): void {
     numeroMatricula: [this.data.estudiante?.numeroMatricula || '', Validators.required],
     grado: [this.data.estudiante?.grado || '', Validators.required],
     persona: this.fb.group({
+      id:        [this.data.estudiante?.persona.id],
       firstName: [this.data.estudiante?.persona.firstName || '', Validators.required],
       lastNames: [this.data.estudiante?.persona.lastNames || '', Validators.required],
       birthDate: [this.data.estudiante?.persona.birthDate || '', Validators.required],
